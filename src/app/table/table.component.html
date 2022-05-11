@@ -1,0 +1,36 @@
+
+
+<table class="table m-4 bold text-center " >
+    <thead>
+      <tr>
+        <th>MS</th>
+        <th>Name </th>
+        <th>Gender</th>
+        <th>Avatar</th>
+        <th>STatus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let teacher of teachers">
+        <td>{{teacher.id}}</td>
+        <td>{{teacher.name}}</td>
+        <td>
+          <span class="text-danger " *ngIf="teacher.gender === 1">
+            Nam
+          </span>
+          <span *ngIf="teacher.gender === 0">
+            Nữ
+          </span>
+        </td>
+        <td><img class="rounded-circle " src={{teacher.avatar}} alt=""></td>
+        <td>
+          <span class="text-danger " *ngIf="teacher.status === 1">
+            Đang làm
+          </span>
+          <span *ngIf="teacher.status === 0">
+            Đã nghỉ
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>

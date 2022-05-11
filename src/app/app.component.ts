@@ -11,21 +11,38 @@ export class AppComponent {
   name = 'Trương';
   class = 'WEB16304';
   // kiểu mảng
-  students = [
+  teachers = [
     {
       id:'PH0001',
       name:'vothuy',
+      age:27,
+      gender:0,
+      avatar:"https://picsum.photos/70/70",
       status:0
     },
     {
-      id:'PH0002',
-      name:'vothuy2',
+      id:'PH0001',
+      name:'vothuy',
+      age:27,
+      gender:1,
+      avatar:"https://picsum.photos/70/70",
       status:1
     },
     {
-      id:'PH0003',
-      name:'vothuy3',
+      id:'PH0001',
+      name:'vothuy',
+      age:27,
+      gender:1,
+      avatar:"https://picsum.photos/70/70",
       status:0
+    },
+    {
+      id:'PH0001',
+      name:'vothuy',
+      age:27,
+      gender:0,
+      avatar:"https://picsum.photos/70/70",
+      status:1
     }
   ]
 }
