@@ -5,11 +5,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from './table/table.component';
+import { TableNameComponent } from './table/table-name/table-name.component';
+import { TableGenderComponent } from './table/table-gender/table-gender.component';
+import { TableStatusComponent } from './table/table-status/table-status.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TableComponent
+    TableComponent,
+    TableNameComponent,
+    TableGenderComponent,
+    TableStatusComponent
   ],
   imports: [
     BrowserModule,
