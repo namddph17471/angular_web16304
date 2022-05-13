@@ -15,9 +15,9 @@ export class AppComponent {
     {
       id:'PH0001',
       name:'vothuy',
-      age:27,
+      age:50,
       gender:0,
-      avatar:"https://picsum.photos/70/70",
+      avatar:"https://picsum.photos/50/50",
       status:0
     },
     {
@@ -25,15 +25,15 @@ export class AppComponent {
       name:'vothuy',
       age:27,
       gender:1,
-      avatar:"https://picsum.photos/70/70",
+      avatar:"https://picsum.photos/50/50",
       status:1
     },
     {
       id:'PH0001',
       name:'vothuy',
-      age:27,
+      age:90,
       gender:1,
-      avatar:"https://picsum.photos/70/70",
+      avatar:"https://picsum.photos/50/50",
       status:0
     },
     {
@@ -41,7 +41,7 @@ export class AppComponent {
       name:'vothuy',
       age:27,
       gender:0,
-      avatar:"https://picsum.photos/70/70",
+      avatar:"https://picsum.photos/50/50",
       status:1
     }
   ]
