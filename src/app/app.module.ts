@@ -11,6 +11,7 @@ import { TableStatusComponent } from './table/table-status/table-status.componen
 import { TableAvatarComponent } from './table/table-avatar/table-avatar.component';
 import { FormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
+import { ShowValidateComponent } from './components/show-validate/show-validate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { FormComponent } from './form/form.component';
     TableGenderComponent,
     TableStatusComponent,
     TableAvatarComponent,
-    FormComponent
+    FormComponent,
+    ShowValidateComponent
   ],
   imports: [
     BrowserModule,

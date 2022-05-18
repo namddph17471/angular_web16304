@@ -1,10 +1,15 @@
 
 <div class="container">
+  <div class="w-50 p-4  bg-white shadow mx-auto mb-4">
+    <h1 class="text-center">Angular Form</h1>
+      <app-form></app-form>
+  </div>
   <h1 (click)="clickH1()">Danh sách GV {{name}}</h1>
   <button (click)="changeStatus()" class="btn btn-info text-white fw-bold " >{{showStatus?'Ẩn':"Hiện"}}</button>
   <div>
     <app-table  [users]="teachers" class="{{showStatus ? 'd-block' : 'd-none'}}"></app-table>
   </div>
+  
   <div class="w-50 p-4 bg-white shadow mx-auto">
     <!-- <form action="">
       <input type="text" (keyup)="changeInput($event)" [value]="inputValue" >

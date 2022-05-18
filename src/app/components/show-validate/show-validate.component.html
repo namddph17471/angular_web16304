@@ -1,0 +1,4 @@
+<span class="text-danger  " *ngIf="(field.touched || field.dirty) && field.errors?.['required']">Không được để trống</span>
+<span class="text-danger  " *ngIf="(field.touched || field.dirty) && field.errors?.['minlength']">Không được ít hơn 5 ký tự</span>
+<span class="text-danger  " *ngIf="(field.touched ||field.dirty) && field.errors?.['min']">{{key}} không được bé hơn 1</span>
+<span class="text-danger  " *ngIf="(field.touched ||field.dirty) && field.errors?.['max']">{{key}} không được lớn hơn 100</span>
