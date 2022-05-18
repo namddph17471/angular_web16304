@@ -8,12 +8,11 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angular_we16304 test';
   // Phần Logic định nghĩa giá trị biến và sử dụng ở html
-  name = 'Trương';
   class = 'WEB16304';
   // kiểu mảng
   teachers = [
     {
-      id:'PH0001',
+      id:1,
       name:'vothuy',
       age:50,
       gender:0,
@@ -21,7 +20,7 @@ export class AppComponent {
       status:0
     },
     {
-      id:'PH0001',
+      id:2,
       name:'vothuy',
       age:27,
       gender:1,
@@ -29,7 +28,7 @@ export class AppComponent {
       status:1
     },
     {
-      id:'PH0001',
+      id:3,
       name:'vothuy',
       age:90,
       gender:1,
@@ -37,7 +36,7 @@ export class AppComponent {
       status:0
     },
     {
-      id:'PH0001',
+      id:4,
       name:'vothuy',
       age:27,
       gender:0,
@@ -45,4 +44,39 @@ export class AppComponent {
       status:1
     }
   ]
+  inputValue = '';
+  changeInput = (event:any)=>{
+    this.inputValue = event.target.value
+  }
+  inputValues = {
+    name:'',
+    age:'',
+    avatar:'',
+    gender:'0'
+  }
+  onInput = (event:any,key:'name'|'age'|'avatar'|'gender')=>{
+    this.inputValues[key] = event.target.value
+  }
+  onSubmit = ()=>{
+    console.log(this.inputValues)
+    this.teachers.push({...this.inputValues,
+       age:+this.inputValues.age,
+       id: this.teachers.length +1,
+      gender:+this.inputValues.gender,
+      status:0})  
+      this.inputValues = {
+        name:'',
+        age:'',
+        avatar:'',
+        gender:'0'
+      }   
+  }
+  showStatus = true
+  name = '';
+  changeStatus = ()=>{
+    this.showStatus = !this.showStatus
+  }
+  clickH1 = ()=>{
+    this.name= "Vô thủy"
+  }
 }
