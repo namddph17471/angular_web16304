@@ -2,13 +2,19 @@
     <form action="" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
         <div class="mb-3">
             <label for="" class="form-label">Name GV</label>
-            <input  type="text" class="form-control" name="name" ngModel required minlength="10" #name="ngModel">
+            <input  type="text" class="form-control" name="name" ngModel required minlength="5" #name="ngModel">
             <!-- <span>{{age.errors |json}}</span> -->
             <app-show-validate [field]="name" key="Tên"></app-show-validate>
         </div>
         <div class="mb-3">
+            <label for="" class="form-label">Email GV</label>
+            <input  type="email" class="form-control" name="email" ngModel required email #email="ngModel">
+            <!-- <span>{{email.errors |json}}</span> -->
+            <app-show-validate [field]="email" key="Email"></app-show-validate>
+        </div>
+        <div class="mb-3">
             <label for="" class="form-label">Age GV</label>
-            <input type="number" class="form-control" name="age" ngModel min="18" max="1000" required #age="ngModel" >
+            <input type="number" class="form-control" name="age" ngModel min="1" max="100" required #age="ngModel" >
            <app-show-validate [field]="age" key="Tuổi"></app-show-validate>
         </div>
         <div class="mb-3">

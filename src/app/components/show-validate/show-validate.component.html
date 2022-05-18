@@ -2,3 +2,4 @@
 <span class="text-danger" *ngIf="(field.touched || field.dirty) && field.errors?.['minlength']">Không được ít hơn {{field.errors?.['minlength'].requiredLength}} ký tự</span>
 <span class="text-danger" *ngIf="(field.touched ||field.dirty) && field.errors?.['min']">{{key}} không được bé hơn {{field.errors?.['min'].min}}</span>
 <span class="text-danger" *ngIf="(field.touched ||field.dirty) && field.errors?.['max']">{{key}} không được lớn hơn {{field.errors?.['max'].max}}</span>
+<span class="text-danger" *ngIf="(field.touched || field.dirty) && field.errors?.['email']">Sai định dạng email</span>
