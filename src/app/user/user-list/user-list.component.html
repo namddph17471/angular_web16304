@@ -1,0 +1,33 @@
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tên</th>
+                <th>Tuổi</th>
+                <th>Email</th>
+                <th>Avatar</th>
+                <th>SDT</th>
+                <th>HD</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.email}}</td>
+                <td>
+                    <img src="{{user.avatar}}" alt="">
+                </td>
+                <td>
+                    {{user.sdt}}
+                </td>
+                <td>
+                    <button (click)="onEdit(user.id)" class="btn btn-primary">Edit</button>
+                    <button (click)="onDelete(user.id)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

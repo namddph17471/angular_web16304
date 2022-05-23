@@ -55,9 +55,6 @@ export class FormComponent implements OnInit {
         id:newId + 1
       });
     }else{
-      // const update = userForm.value
-      // console.log(update)
-      // this.users.map(user => user.id == update.id? update:user)
       const idx = this.users.findIndex(user => user.id === this.inputValue.id)
       if (idx > -1) {
         this.users[idx] = {
@@ -77,7 +74,6 @@ export class FormComponent implements OnInit {
   onEdit = (userId:number)=>{
     const editUser = this.users.find((user => user.id === userId))
     if (editUser) {
-      // console.log(editUser)
       this.inputValue = {...editUser}
     }
   }
