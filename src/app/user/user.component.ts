@@ -72,7 +72,8 @@ onRemove = (userId:number)=>{
 onEdit = (userId: number)=>{
   const editUser = this.users.find((user => user.id === userId))
     if (editUser) {
-      this.formValues = {...editUser}
+    return  this.formValues = {...editUser}
     }
+    return alert("User không tồn tại")
 }
 }
