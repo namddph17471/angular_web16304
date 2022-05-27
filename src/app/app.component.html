@@ -1,69 +1,6 @@
 
 <div class="container">
   <div>
-    <nav>
-      <ul>
-        <li>
-          <a routerLink="/">Home</a>
-        </li>
-        <li>
-          <a routerLink="/user">User</a>
-        </li>
-      </ul>
-    </nav>
     <router-outlet></router-outlet>
   </div>
-  <!-- <div class="">
-      <app-user></app-user>
-  </div> -->
-  <!-- <h1 (click)="clickH1()">Danh sách GV {{name}}</h1>
-  <button (click)="changeStatus()" class="btn btn-info text-white fw-bold " >{{showStatus?'Ẩn':"Hiện"}}</button>
-  <div>
-    <app-table  [users]="teachers" class="{{showStatus ? 'd-block' : 'd-none'}}"></app-table>
-  </div> -->
-  
-  <!-- <div class="w-50 p-4 bg-white shadow mx-auto">
-    <form action="">
-      <input type="text" (keyup)="changeInput($event)" [value]="inputValue" >
-      {{inputValue}}
-    </form>
-    <form>
-      <h1 class="text-center fw-bold" >Thông tin GV</h1>
-      <div class="mb-3">
-        <label for="" class="form-label">Name GV</label>
-        <input  type="text" class="form-control"(input)="onInput($event,'name')" [value]="this.inputValues.name"  >
-      </div>
-      <div class="mb-3">
-        <label for="" class="form-label">Age GV</label>
-        <input type="number" class="form-control" (input)="onInput($event,'age')"[value]="this.inputValues.age" >
-      </div>
-      <div class="mb-3">
-        <label for="" class="form-label mx-auto p-2">Gender GV</label>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" (input)="onInput($event,'gender')" [checked]="inputValues.gender =='1'" id="inlineRadio1" [value]="1">
-          <label class="form-check-label" for="inlineRadio1">Nam</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" (input)="onInput($event,'gender')" [checked]="inputValues.gender =='0'" id="inlineRadio2" [value]="0">
-          <label class="form-check-label" for="inlineRadio2">Nữ</label>
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="" class="form-label">Avatar </label>
-        <input type="text" class="form-control" (input)="onInput($event,'avatar')"[value]="this.inputValues.avatar" >
-      </div>
-      <div class="mb-3">
-        <label for="" class="form-label">Status</label>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" (input)="onInput($event,'status')" id="inlineRadio1" value="option1">
-          <label class="form-check-label" for="inlineRadio1">Đã nghỉ</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="inlineRadioOptions" (input)="onInput($event,'status')" id="inlineRadio2" value="option2">
-          <label class="form-check-label" for="inlineRadio2">Đang làm việc</label>
-        </div>
-      </div>
-      <button type="button" (click)="onSubmit()" class="btn btn-primary">Submit</button>
-    </form>
-  </div> -->
 </div>

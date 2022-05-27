@@ -1,5 +1,19 @@
 <div class="container">
-    <header>Header</header>
+    <header>
+        <nav>
+            <ul class="nav">
+              <li >
+                <a class="nav-link" routerLink="/">Home</a>
+              </li>
+              <li >
+                <a class="nav-link" routerLink="/users">User</a>
+              </li>
+              <li >
+                <a class="nav-link" routerLink="/admin">Admin</a>
+              </li>
+            </ul>
+          </nav>
+    </header>
     <div>
         <!--là nơi những phầm component thuộc client sẽ đc render-->
         <router-outlet></router-outlet>

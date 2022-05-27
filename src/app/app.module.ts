@@ -17,6 +17,7 @@ import { UserListComponent } from './user/user-list/user-list.component';
 import { UserFormComponent } from './user/user-form/user-form.component';
 import { HomeComponent } from './home/home.component';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +32,8 @@ import { ClientLayoutComponent } from './layouts/client-layout/client-layout.com
     UserListComponent,
     UserFormComponent,
     HomeComponent,
-    ClientLayoutComponent
+    ClientLayoutComponent,
+    AdminLayoutComponent
   ],
   imports: [
     BrowserModule,

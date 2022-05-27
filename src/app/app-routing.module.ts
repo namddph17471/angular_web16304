@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { UserFormComponent } from './user/user-form/user-form.component';
 import { UserComponent } from './user/user.component';
@@ -15,11 +16,26 @@ const routes: Routes = [
       component:HomeComponent
     },
     {
-      path:'user',
+      path:'users',
       component:UserComponent
     }
     ]
   },
+  {
+    path:'admin',
+    component:AdminLayoutComponent,
+    children:[
+      {
+        path:'',
+        redirectTo:'users',
+        pathMatch:'full'
+      },
+      {
+        path:'users',
+        component:UserComponent
+      }
+    ]
+  }
   // {
   //   path:'user',
   //   component:UserComponent,
