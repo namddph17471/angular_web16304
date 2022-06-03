@@ -14,9 +14,20 @@ export class AdminProductListComponent implements OnInit {
    }
 
   ngOnInit(): void {
+   this.onGetList();
+  }
+  onGetList(){
     this.productService.getProducts().subscribe((data) =>{
       this.products = data
     })
+  }
+  onDelete(id: string){
+    const confirm = window.confirm("Bạn có chắc muốn xóa ?")
+    if (confirm && id) {
+      this.productService.deleteProduct(id).subscribe((data)=>{
+        this.onGetList();
+      })
+    }
   }
 
 }

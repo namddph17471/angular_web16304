@@ -1,1 +1,12 @@
-<h1> {{product.name}} </h1>
+<div>
+    <div>
+        <a routerLink="/admin/products">
+            <button class="btn btn-info" >Quay lại</button>
+        </a>
+    </div>
+    <div>
+        <h1>ID: {{product._id}} </h1>
+        <h1>Tên: {{product.name}} </h1>
+        <h1>Số Tiền Nợ: {{product.price}} </h1>
+    </div>
+</div>

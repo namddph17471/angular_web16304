@@ -15,10 +15,10 @@ export class AdminProductDetailComponent implements OnInit {
     ) {
       this.product = {
         _id:'0',
-        name:''
+        name:'',
+        price:0
       }
      }
-
   ngOnInit(): void {
     const id = this.activavteRoute.snapshot.params['id']
     this.productService.getProduct(id).subscribe(data =>{
