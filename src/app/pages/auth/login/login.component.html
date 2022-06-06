@@ -1,0 +1,14 @@
+<div class="mx-auto shadow  rounded-3 p-3 mt-3 w-50 ">
+    <h1 class="text-center">Đăng nhập</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+        <div class="mb-3">
+          <label  class="form-label">Email </label>
+          <input type="text" class="form-control" formControlName="email" >
+        </div>
+        <div class="mb-3">
+          <label  class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="password" >
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

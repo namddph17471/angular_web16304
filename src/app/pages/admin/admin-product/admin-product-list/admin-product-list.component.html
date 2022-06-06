@@ -11,6 +11,7 @@
             <th>STT</th>
             <th>Tên</th>
             <th>Số Tiền Nợ</th>
+            <th>Status</th>
             <th>HD</th>
         </tr>
     </thead>
@@ -20,12 +21,16 @@
             <td>{{product.name}}</td>
             <td>{{product.price}}</td>
             <td>
+                <button *ngIf="product.status === 1"  class="btn btn-success" (click)="onUpdateStatus(product._id,0)" >Đã Trả Nợ</button>
+                <button *ngIf="product.status === 0"  class="btn btn-secondary" (click)="onUpdateStatus(product._id,1)" >Chưa Trả Nợ</button>
+            </td>
+            <td>
                 <a routerLink="/admin/products/{{product._id}}">
                     <button class="btn btn-info" >Detail</button>
                 </a>
-                <!-- <a class="btn btn-primary" [routerLink]="['/admin','products',product._id]">
-                    <button class="btn btn-primary" >Detail</button>
-                </a> -->
+                <a routerLink="/admin/products/edit/{{product._id}}">
+                    <button class="btn btn-primary m-2" >Edit</button>
+                </a>
                 <button  class="btn btn-danger m-2" (click)="onDelete(product._id)">Delete</button>
             </td>
         </tr>

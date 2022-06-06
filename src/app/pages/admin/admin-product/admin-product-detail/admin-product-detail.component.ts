@@ -16,7 +16,8 @@ export class AdminProductDetailComponent implements OnInit {
       this.product = {
         _id:'0',
         name:'',
-        price:0
+        price:0,
+        status:0
       }
      }
   ngOnInit(): void {
