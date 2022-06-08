@@ -9,3 +9,8 @@ export type ProductCreate = {
     price?: number,
     status?:number
 }
+export type ProductCart = {
+    id : string,
+    name:string,
+    value:number
+}

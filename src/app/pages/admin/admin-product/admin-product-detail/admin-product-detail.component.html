@@ -8,5 +8,14 @@
         <h1>ID: {{product._id}} </h1>
         <h1>Tên: {{product.name}} </h1>
         <h1>Số Tiền Nợ: {{product.price}} </h1>
+        <div>
+            <input
+              type="number"
+              min="1"
+              [value]="cartItemValue"
+              (input)="onInputValueChange($event)"
+            />
+            <button (click)="onAddToCart()">Thêm vào giỏ hàng</button>
+          </div>
     </div>
 </div>
