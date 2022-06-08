@@ -1,4 +1,4 @@
-<div class="mx-auto shadow  rounded-3 p-3 mt-3 w-50 ">
+<!-- <div class="mx-auto shadow  rounded-3 p-3 mt-3 w-50 ">
     <h1 class="text-center">Đăng nhập</h1>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
         <div class="mb-3">
@@ -11,4 +11,35 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    
+</div> -->
+<div class='w-[400px] mx-auto shadow rounded bg-white p-8 mt-5'>
+  <h1 class="text-center font-medium text-3xl">Đăng Nhập</h1>
+  <form class="mt-8 space-y-6" [formGroup]="loginForm" (ngSubmit)="onSubmit()" action="#" id="form-signin" method="POST">
+      <div class="rounded">
+          <div class="my-4 py-2">
+          <label class=" font-medium text-indigo-600 hover:text-indigo-500">Email address</label>
+              <input  type="email" formControlName="email"   class="appearance-none  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address" />          
+          </div>
+          <div class="my-4 py-2">
+          <label  class=" font-medium text-indigo-600 hover:text-indigo-500 ">Password</label>
+              <input  type="password"  formControlName="password"autoComplete="current-password"  class="appearance-none  relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password"  />
+              
+          </div>
+      </div>
+      <div>
+          <div class="text-sm">
+          <p>
+              Bạn chưa có tài khoản?
+              <a routerLink="/auth/signup" class="font-medium text-indigo-600 hover:text-indigo-500">
+              Đăng ký
+              </a>
+          </p>
+          </div>
+          <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Đăng nhập
+          </button>
+      </div>
+  </form>
+
 </div>
