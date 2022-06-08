@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/types/Product';
 
@@ -9,7 +10,10 @@ import { Product } from 'src/app/types/Product';
 })
 export class AdminProductListComponent implements OnInit {
   products:Product[]
-  constructor( private productService: ProductService) {
+  constructor( 
+    private productService: ProductService,
+    private toastr:ToastrService
+    ) {
     this.products = []
    }
 
@@ -25,6 +29,7 @@ export class AdminProductListComponent implements OnInit {
     this.productService.updateProduct(id,{
       status:newStatus
     }).subscribe(data =>{
+      this.toastr.success('Cập nhật thành công')
       this.onGetList()
     })
   }
@@ -32,6 +37,7 @@ export class AdminProductListComponent implements OnInit {
     const confirm = window.confirm("Bạn có chắc muốn xóa ?")
     if (confirm && id) {
       this.productService.deleteProduct(id).subscribe((data)=>{
+        this.toastr.success('Xóa thành công')
         this.onGetList();
       })
     }

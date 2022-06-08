@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/services/product.service';
 @Component({
   selector: 'app-admin-product-form',
@@ -12,7 +13,8 @@ export class AdminProductFormComponent implements OnInit {
   productId:string
   constructor(private productService : ProductService,
     private router: Router ,
-    private activateRoute : ActivatedRoute
+    private activateRoute : ActivatedRoute,
+    private toastr: ToastrService
     ) { 
     this.productForm = new FormGroup({
       name:new FormControl('',[
@@ -55,13 +57,14 @@ export class AdminProductFormComponent implements OnInit {
     const data = this.productForm.value
     if (this.productId!== '' && this.productId !== undefined) {
       return  this.productService.updateProduct(this.productId,data).subscribe(data =>{
+          this.toastr.success('Cập nhật thành công')
           this.redireicToList()
         })
     }
     // call API tạo mới
     return this.productService.createProduct(data).subscribe(data =>{
       // quay lại danh sách products
-      alert("Thêm thành công")
+      this.toastr.success("Thêm thành công")
       // this.router.navigate(['/admin','products'])
       this.redireicToList()
       // khi quay về list thỳ ngOnInit trg list sẽ đc chạy và call API lấy ds mới
