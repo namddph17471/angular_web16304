@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CateProductService } from 'src/app/services/cate-product.service';
 import { ProductService } from 'src/app/services/product.service';
-import { CateProduct } from 'src/app/types/CateProduct';
+import { CateProductType } from 'src/app/types/CateProduct';
 @Component({
   selector: 'app-admin-product-form',
   templateUrl: './admin-product-form.component.html',
@@ -13,7 +13,7 @@ import { CateProduct } from 'src/app/types/CateProduct';
 export class AdminProductFormComponent implements OnInit {
   productForm:FormGroup;
   productId:string;
-  cateProducts:CateProduct[]
+  cateProducts:CateProductType[]
   constructor(
     private productService : ProductService,
     private cateProductService : CateProductService,

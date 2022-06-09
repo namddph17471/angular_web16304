@@ -1,0 +1,151 @@
+<!-- <div class="container">
+    <div>
+        <a routerLink="/">
+            <button class="rounded bg-indigo-500 p-2 text-white">
+                Quay Lại
+            </button>
+        </a>
+    </div>
+    <table class="table table-hover text-center">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Ảnh</th>
+                <th>Tên</th>
+                <th>Số Lượng</th>
+                <th>HD</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cartItem of cartItems,index as i" >
+                <td> {{i + 1}} </td>
+                <td>
+                    <div class="block-image">
+                            
+                        <div class="bk-left">
+                            <span class="namehotrofm"></span>
+                        </div>
+                        <div class="thumb mt-10 ">
+                            <a routerLink="/products" >
+                                <img src="{{cartItem.image}}"  class="no-repeat center center;background-size:cover w-full h-full object-center object-cover " />
+                            </a>
+                        </div>
+                    </div>
+                </td>
+                <td>{{cartItem.name}}</td>
+                <td>{{cartItem.value}} </td>
+                <td>
+                    <a routerLink="/admin/cateProduct/edit/{{cartItem._id}}">
+                        <button class="btn btn-primary m-2" >Edit</button>
+                    </a>
+                    <button  class="btn btn-danger m-2" (click)="onDelete(cartItem._id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+</div> -->
+<div class="max-w-7xl mx-auto py-6 ">
+    <div class="px-4 py-3 sm:px-0">
+      <div class=" rounded-lg ">
+        <div class="flex flex-col max-w-5xl mx-auto">
+          <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+              <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50 ">
+                            <tr >
+                            <th scope="col" class="text-center px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                STT
+                            </th>
+                            <th scope="col" class="text-center px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Ảnh
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Tên
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Danh mục
+                            </th>
+                            <th scope="col" class="text-center px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Giá
+                            </th>
+                            <th scope="col" class="text-center px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Số Lượng
+                            </th>
+                            <th scope="col" class="text-center px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Tổng
+                            </th>
+                            <th scope="col" class="text-center px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                HD
+                            </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr *ngFor="let cartItem of cartItems,index as i">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-sm text-gray-900">{{i + 1}}</div>
+                                </td>
+                                <td class="">
+                                    <div class="">
+                                        <div class="p-5">
+                                            <div class="block-image">
+                                                <div class="bk-left">
+                                                    <span class="namehotrofm"></span>
+                                                </div>
+                                                <div class="thumb mt-10 ">
+                                                    <a routerLink="/products" >
+                                                        <img src="{{cartItem.image}}"  class="no-repeat center center;background-size:cover w-full h-full object-center object-cover"/>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-base text-gray-900">
+                                        {{cartItem.name}}
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-base text-gray-900">
+                                        {{cartItem.cateProductId?.name}}
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-base text-gray-900">
+                                        {{cartItem.price}}
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-base text-gray-900 text-xl font-bold">
+                                        <span class="p-[5px] rounded bg-green-500 text-white font-bold">-</span>
+                                        {{cartItem.value}}
+                                        <span class="p-[5px] rounded bg-red-500 text-white font-bold">+</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-base text-gray-900 text-xl font-bold">
+                                        {{cartItem.value * cartItem.price}}
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="text-base text-gray-900">
+                                        <button class='border font-medium text-base text-white m-2 p-2 rounded bg-red-500'>Remove</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                        <tfoot class="">
+                            <td colspan="4" class="text-center">Total</td>
+                            <td colspan="3" class="text-center pr-[70px]" id="total">{{total}}</td>
+                          </tfoot>
+                  </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

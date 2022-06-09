@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { ProductCart } from '../types/Product';
+import { ProductCartType } from '../types/Product';
 
 @Injectable({
   providedIn: 'root'
@@ -18,12 +18,12 @@ export class LocalStorageService {
     return JSON.parse(localStorage.getItem('cart') || '[]');
   }
 
-  setItem(addItem:ProductCart) {
+  setItem(addItem:ProductCartType) {
     // Nghiệp vụ thêm sp vào giỏ
     // 1. Lấy ra toàn bộ sp trong giỏ
     const cartItems = this.getItem();
     // 2. kiểm tra trong giỏ đã có phần tử có id giống cartItem chưa
-    const existItem = cartItems.find((item: ProductCart) =>
+    const existItem = cartItems.find((item: ProductCartType) =>
       item.id === addItem.id
     );
     if (!existItem) {

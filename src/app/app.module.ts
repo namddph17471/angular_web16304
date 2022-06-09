@@ -32,7 +32,10 @@ import { CartComponent } from './components/cart/cart.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ResgiterComponent } from './pages/auth/resgiter/resgiter.component';
 import { AdminCateProductListComponent } from './pages/admin/admin-cateProduct/admin-cate-product-list/admin-cate-product-list.component';
-import { AdminCateProductFormComponent } from './pages/admin/admin-cateProduct/admin-cate-product-form/admin-cate-product-form.component'
+import { AdminCateProductFormComponent } from './pages/admin/admin-cateProduct/admin-cate-product-form/admin-cate-product-form.component';
+import { DetailProductComponent } from './pages/product/detail-product/detail-product.component';
+import { ShowCartComponent } from './pages/show-cart/show-cart.component';
+import { ListProductComponent } from './pages/product/list-product/list-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,7 +60,10 @@ import { AdminCateProductFormComponent } from './pages/admin/admin-cateProduct/a
     AboutComponent,
     ResgiterComponent,
     AdminCateProductListComponent,
-    AdminCateProductFormComponent
+    AdminCateProductFormComponent,
+    DetailProductComponent,
+    ShowCartComponent,
+    ListProductComponent
   ],
   imports: [
     BrowserModule,

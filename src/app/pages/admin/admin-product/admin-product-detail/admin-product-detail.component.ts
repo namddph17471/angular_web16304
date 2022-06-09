@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { ProductService } from 'src/app/services/product.service';
-import { Product, ProductCart } from 'src/app/types/Product';
+import { ProductType } from 'src/app/types/Product';
 
 @Component({
   selector: 'app-admin-product-detail',
@@ -10,12 +10,12 @@ import { Product, ProductCart } from 'src/app/types/Product';
   styleUrls: ['./admin-product-detail.component.css']
 })
 export class AdminProductDetailComponent implements OnInit {
-  product:Product
+  product:ProductType
   cartItemValue:number =1
   constructor( 
     private productService: ProductService,
     private lsService: LocalStorageService,
-    private activavteRoute:ActivatedRoute 
+    private activatedRoute:ActivatedRoute 
     ) {
       this.product = {
         _id:'0',
@@ -29,7 +29,7 @@ export class AdminProductDetailComponent implements OnInit {
       }
      }
   ngOnInit(): void {
-    const id = this.activavteRoute.snapshot.params['id']
+    const id = this.activatedRoute.snapshot.params['id']
     this.productService.getProduct(id).subscribe(data =>{
       this.product = data
     })
@@ -42,6 +42,10 @@ export class AdminProductDetailComponent implements OnInit {
     const addItem = {
       id: this.product._id,
       name: this.product.name,
+      image: this.product.image,
+      cateProductId: this.product.cateProductId,
+      price: this.product.price,
+      sale_price: this.product.sale_price,
       value: +this.cartItemValue
     };
     // // 2. Kiểm tra xem đã có sp này trong giỏ hàng chưa

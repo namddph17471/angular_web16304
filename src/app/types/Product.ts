@@ -1,4 +1,4 @@
-export type Product = {
+export type ProductType = {
     _id : string,
     cateProductId : any,
     name:string,
@@ -8,16 +8,21 @@ export type Product = {
     desc:string,
     image:string
 }
-export type ProductCreate = {
+export type ProductCreateType = {
     name?: string,
     price?: number,
     status?:number,
     sale_price?:number,
     desc?:string,
-    image?:string
+    image?:string,
+    cateProductId?:string,
 }
-export type ProductCart = {
+export type ProductCartType = {
     id : string,
     name:string,
-    value:number
+    image:string,
+    sale_price:number,
+    price:number,
+    value:number,
+    cateProductId:any,
 }

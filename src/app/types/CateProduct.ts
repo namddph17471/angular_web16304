@@ -1,10 +1,10 @@
-export type CateProduct = {
+export type CateProductType = {
     _id : string,
     name:string,
     image:string
     status:number,
 }
-export type CateProductCreate = {
+export type CateProductCreateType = {
     name?: string,
     image?:string
     status?:number,

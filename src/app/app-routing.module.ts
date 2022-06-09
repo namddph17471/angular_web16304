@@ -14,6 +14,9 @@ import { UserComponent } from './user/user.component';
 import { AdminCateProductListComponent } from './pages/admin/admin-cateProduct/admin-cate-product-list/admin-cate-product-list.component';
 import { ResgiterComponent } from './pages/auth/resgiter/resgiter.component';
 import { AdminCateProductFormComponent } from './pages/admin/admin-cateProduct/admin-cate-product-form/admin-cate-product-form.component';
+import { ListProductComponent } from './pages/product/list-product/list-product.component';
+import { DetailProductComponent } from './pages/product/detail-product/detail-product.component';
+import { ShowCartComponent } from './pages/show-cart/show-cart.component';
 
 const routes: Routes = [
   {
@@ -31,6 +34,23 @@ const routes: Routes = [
     {
       path:'users',
       component:UserComponent
+    },
+    {
+      path:'products',
+      children:[
+        {
+          path:'',
+          component:ListProductComponent
+        },
+        {
+          path:':id',
+          component:DetailProductComponent
+        }
+      ]
+    },
+    {
+      path:'cart',
+      component:ShowCartComponent
     }
     ]
   },

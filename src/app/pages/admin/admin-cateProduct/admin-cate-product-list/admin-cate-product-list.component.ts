@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { CateProductService } from 'src/app/services/cate-product.service';
-import { CateProduct } from 'src/app/types/CateProduct';
+import { CateProductType } from 'src/app/types/CateProduct';
 
 @Component({
   selector: 'app-admin-cate-product-list',
@@ -9,7 +9,7 @@ import { CateProduct } from 'src/app/types/CateProduct';
   styleUrls: ['./admin-cate-product-list.component.css']
 })
 export class AdminCateProductListComponent implements OnInit {
-  cateProducts: CateProduct[]
+  cateProducts: CateProductType[]
   constructor(
     private cateProductService: CateProductService,
     private toastr: ToastrService
