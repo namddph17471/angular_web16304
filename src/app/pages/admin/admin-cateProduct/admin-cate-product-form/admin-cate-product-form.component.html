@@ -1,0 +1,20 @@
+<div class="container shadow w-100 p-5 rounded ">
+    <!--ĐỊnh ngĩa biến quản lý form-->
+    <form action="" [formGroup]="cateProductForm" (ngSubmit)="onSubmit()" >
+        <div class="mb-3" >
+            <label for="">Tên</label>
+            <!--Định nghĩa thuộc tính để lắng nghe input-->
+            <input type="text" class="form-control" formControlName="name">
+            <app-show-validate [field]="cateProductForm.get('name')" key="Tên Sản Phẩm"  ></app-show-validate>
+        </div>
+        <div class="mb-3" >
+            <label for="">Ảnh</label>
+            <input type="text" class="form-control" formControlName="image">
+            <app-show-validate [field]="cateProductForm.get('image')" key="Ảnh"  ></app-show-validate>
+        </div>
+        <div class="mb-3" >
+           <button [disabled]="!cateProductForm.valid" class="btn btn-success">Submit</button>
+           <a routerLink="/admin/cateProduct" class="btn btn-primary ml-1" >Quay lại</a>
+        </div>
+    </form>
+</div>

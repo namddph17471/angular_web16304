@@ -2,12 +2,18 @@ export type Product = {
     _id : string,
     name:string,
     price: number,
-    status:number
+    status:number,
+    sale_price:number,
+    desc:string,
+    image:string
 }
 export type ProductCreate = {
     name?: string,
     price?: number,
-    status?:number
+    status?:number,
+    sale_price?:number,
+    desc?:string,
+    image?:string
 }
 export type ProductCart = {
     id : string,

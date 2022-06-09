@@ -14,7 +14,22 @@
             <app-show-validate [field]="productForm.get('price')" key="Giá Sản Phẩm"  ></app-show-validate>
         </div>
         <div class="mb-3" >
-           <button [disabled]="!productForm.valid" class="btn btn-success">Thêm</button>
+            <label for="">Giá Sale</label>
+            <input type="number" class="form-control" formControlName="price">
+            <app-show-validate [field]="productForm.get('sale_price')" key="Giá Sale"  ></app-show-validate>
+        </div>
+        <div class="mb-3" >
+            <label for="">Ảnh</label>
+            <input type="text" class="form-control" formControlName="image">
+            <app-show-validate [field]="productForm.get('image')" key="Ảnh"  ></app-show-validate>
+        </div>
+        <div class="mb-3" >
+            <label for="">Mô tả</label>
+            <input type="text" class="form-control" formControlName="desc">
+            <app-show-validate [field]="productForm.get('desc')" key="Mô tả"  ></app-show-validate>
+        </div>
+        <div class="mb-3" >
+           <button [disabled]="!productForm.valid" class="btn btn-success">Submit</button>
            <a routerLink="/admin/products" class="btn btn-primary ml-1" >Quay lại</a>
         </div>
     </form>

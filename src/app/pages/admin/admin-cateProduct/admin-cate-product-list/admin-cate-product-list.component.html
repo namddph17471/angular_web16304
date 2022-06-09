@@ -1,0 +1,48 @@
+<div>
+    <a routerLink="/admin/cateProduct/create">
+        <button class="btn btn-primary">
+            Thêm
+        </button>
+    </a>
+</div>
+<table class="table table-hover text-center">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Ảnh</th>
+            <th>Tên</th>
+            <th>Status</th>
+            <th>HD</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cateProduct of cateProducts,index as i" >
+            <td> {{i + 1}} </td>
+            <td>
+                <div class="block-image">
+                        
+                    <div class="bk-left">
+                        <span class="namehotrofm"></span>
+                    </div>
+                    <div class="thumb mt-10 ">
+                        <a routerLink="/products" >
+                            <img src="{{cateProduct.image}}"  class="no-repeat center center;background-size:cover w-full h-full object-center object-cover " />
+                        </a>
+                    </div>
+                </div>
+            </td>
+            <td>{{cateProduct.name}}</td>
+            
+            <td>
+                <button *ngIf="cateProduct.status === 1"  class="btn btn-success" (click)="onUpdateStatus(cateProduct._id,0)" >Đã Trả Nợ</button>
+                <button *ngIf="cateProduct.status === 0"  class="btn btn-secondary" (click)="onUpdateStatus(cateProduct._id,1)" >Chưa Trả Nợ</button>
+            </td>
+            <td>
+                <a routerLink="/admin/cateProduct/edit/{{cateProduct._id}}">
+                    <button class="btn btn-primary m-2" >Edit</button>
+                </a>
+                <button  class="btn btn-danger m-2" (click)="onDelete(cateProduct._id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

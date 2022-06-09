@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { CateProductService } from 'src/app/services/cate-product.service';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/types/Product';
 
@@ -12,6 +13,7 @@ export class AdminProductListComponent implements OnInit {
   products:Product[]
   constructor( 
     private productService: ProductService,
+    private cateProductService: CateProductService,
     private toastr:ToastrService
     ) {
     this.products = []

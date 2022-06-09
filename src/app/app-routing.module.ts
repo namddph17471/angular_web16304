@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CanAccessAdminGuard } from './guards/can-access-admin.guard';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -11,6 +11,9 @@ import { AdminProductListComponent } from './pages/admin/admin-product/admin-pro
 import { LoginComponent } from './pages/auth/login/login.component';
 import { UserFormComponent } from './user/user-form/user-form.component';
 import { UserComponent } from './user/user.component';
+import { AdminCateProductListComponent } from './pages/admin/admin-cateProduct/admin-cate-product-list/admin-cate-product-list.component';
+import { ResgiterComponent } from './pages/auth/resgiter/resgiter.component';
+import { AdminCateProductFormComponent } from './pages/admin/admin-cateProduct/admin-cate-product-form/admin-cate-product-form.component';
 
 const routes: Routes = [
   {
@@ -65,6 +68,23 @@ const routes: Routes = [
             component:AdminProductDetailComponent
           }
         ]
+      },
+      {
+        path:'cateProduct',
+        children:[
+          {
+            path:'',
+            component:AdminCateProductListComponent
+          },
+          {
+            path:'create',
+            component:AdminCateProductFormComponent
+          },
+          {
+            path:'edit/:id',
+            component:AdminCateProductFormComponent
+          }
+        ]
       }
     ]
   },
@@ -74,6 +94,10 @@ const routes: Routes = [
       {
         path:'login',
         component:LoginComponent
+      },
+      {
+        path:'resgiter',
+        component:ResgiterComponent
       }
     ]
   }

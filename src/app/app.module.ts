@@ -20,7 +20,7 @@ import { ShowValidateComponent } from './components/show-validate/show-validate.
 import { UserComponent } from './user/user.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserFormComponent } from './user/user-form/user-form.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AdminProductListComponent } from './pages/admin/admin-product/admin-product-list/admin-product-list.component';
@@ -29,7 +29,10 @@ import { AdminProductFormComponent } from './pages/admin/admin-product/admin-pro
 import {HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { CartComponent } from './components/cart/cart.component';
-import { AboutComponent } from './pages/about/about.component'
+import { AboutComponent } from './pages/about/about.component';
+import { ResgiterComponent } from './pages/auth/resgiter/resgiter.component';
+import { AdminCateProductListComponent } from './pages/admin/admin-cateProduct/admin-cate-product-list/admin-cate-product-list.component';
+import { AdminCateProductFormComponent } from './pages/admin/admin-cateProduct/admin-cate-product-form/admin-cate-product-form.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +54,10 @@ import { AboutComponent } from './pages/about/about.component'
     AdminProductFormComponent,
     LoginComponent,
     CartComponent,
-    AboutComponent
+    AboutComponent,
+    ResgiterComponent,
+    AdminCateProductListComponent,
+    AdminCateProductFormComponent
   ],
   imports: [
     BrowserModule,
