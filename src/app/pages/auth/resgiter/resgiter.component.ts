@@ -23,7 +23,6 @@ export class ResgiterComponent implements OnInit {
       ]),
       email: new FormControl('',[
         Validators.required,
-        Validators.minLength(5),
         Validators.email,
       ]),
       password: new FormControl('',[

@@ -3,17 +3,19 @@
     <form class="mt-8 space-y-6" [formGroup]="resgiterForm" (ngSubmit)="onSubmit()" action="#" id="form-signin" method="POST">
         <div class="rounded">
             <div class="my-4 py-2">
-            <label class=" font-medium text-[#d3b87d] hover:text-[#d3b87d]">Name</label>
-                <input  type="text" formControlName="name"   class="appearance-none  relative block w-full px-4 py-2 border border-[#f7f7f7]   bg-[#f7f7f7]  placeholder-gray-500 text-gray-900 rounded-full focus:outline-none focus:ring-[#f4e6c3] focus:border-[#f4e6c3] focus:border-4 focus:z-10 sm:text-sm" placeholder="Name" />          
-            </div>
+                <label class=" font-medium text-[#d3b87d] hover:text-[#d3b87d]">Name</label>
+                    <input  type="text" formControlName="name"   class="appearance-none  relative block w-full px-4 py-2 border border-[#f7f7f7]   bg-[#f7f7f7]  placeholder-gray-500 text-gray-900 rounded-full focus:outline-none focus:ring-[#f4e6c3] focus:border-[#f4e6c3] focus:border-4 focus:z-10 sm:text-sm" placeholder="Name" />          
+                      <app-show-validate [field]="resgiterForm.get('name')" key="Name"  ></app-show-validate>
+                </div>
             <div class="my-4 py-2">
                 <label class=" font-medium text-[#d3b87d] hover:text-[#d3b87d]">Email address</label>
                     <input  type="email" formControlName="email"   class="appearance-none  relative block w-full px-4 py-2 border border-[#f7f7f7]   bg-[#f7f7f7]  placeholder-gray-500 text-gray-900 rounded-full focus:outline-none focus:ring-[#f4e6c3] focus:border-[#f4e6c3] focus:border-4 focus:z-10 sm:text-sm" placeholder="Email address" />          
+                      <app-show-validate [field]="resgiterForm.get('email')" key="Email"  ></app-show-validate>
                 </div>
             <div class="my-4 py-2">
             <label  class=" font-medium text-[#d3b87d] hover:text-[#d3b87d] ">Password</label>
                 <input  type="password"  formControlName="password"autoComplete="current-password"  class="appearance-none bg-[#f7f7f7]  relative block w-full px-4 py-2 border border-[#f7f7f7]   placeholder-gray-500 text-gray-900 rounded-full focus:outline-none focus: ring-[#f4e6c3] focus:border-4 focus:border-[#f4e6c3] focus:z-10 sm:text-sm" placeholder="Password"  />
-                
+                      <app-show-validate [field]="resgiterForm.get('password')" key="Password"  ></app-show-validate>
             </div>
         </div>
         <div>
