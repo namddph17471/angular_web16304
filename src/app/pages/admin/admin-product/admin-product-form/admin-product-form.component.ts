@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormControl, Validators, AbstractControl, ValidationErrors } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { CateProductService } from 'src/app/services/cate-product.service';
 import { ProductService } from 'src/app/services/product.service';
+import { CateProduct } from 'src/app/types/CateProduct';
 @Component({
   selector: 'app-admin-product-form',
   templateUrl: './admin-product-form.component.html',
@@ -10,8 +12,11 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class AdminProductFormComponent implements OnInit {
   productForm:FormGroup;
-  productId:string
-  constructor(private productService : ProductService,
+  productId:string;
+  cateProducts:CateProduct[]
+  constructor(
+    private productService : ProductService,
+    private cateProductService : CateProductService,
     private router: Router ,
     private activateRoute : ActivatedRoute,
     private toastr: ToastrService
@@ -20,34 +25,59 @@ export class AdminProductFormComponent implements OnInit {
       name:new FormControl('',[
         Validators.required,
         Validators.minLength(6),
-        this.onValidateName
+        // this.onValidateName
       ]) ,//FormControl(giá trị mặc định)
       price: new FormControl(0,[
         Validators.required,
         Validators.min(0)
-      ])
+      ]),
+      sale_price: new FormControl(0,[
+        Validators.required,
+        Validators.min(0)
+      ]),
+      desc: new FormControl('',[
+        Validators.required,
+      ]),
+      image: new FormControl('',[
+        Validators.required,
+      ]),
+      cateProductId: new FormControl('',[
+        Validators.required,
+      ]),
     });
-    this.productId = ''
+    this.productId = '';
+    this.cateProducts = []
   }
 
   ngOnInit(): void {
+    this.onGetListCate()
      this.productId = this.activateRoute.snapshot.params['id']
     if (this.productId) {
       this.productService.getProduct(this.productId).subscribe(data =>{
+        console.log(data,"edit")
         this.productForm.patchValue({ // cập nhật data cho form
           name:data.name,
-          price:data.price
+          price:data.price,
+          sale_price:data.sale_price,
+          image:data.image,
+          cateProductId:data.cateProductId,
+          desc:data.desc
         })
       })
     }
   }
-  onValidateName (control : AbstractControl): ValidationErrors|null{
-    const inputvalue = control.value
-    if (inputvalue &&inputvalue.length >6 && !inputvalue.includes('product')) {
-      return {hasProductsError: true}
-    }
-    return null
+  onGetListCate(){
+    this.cateProductService.getCateProducts().subscribe(data =>{
+      this.cateProducts = data
+    })
   }
+  // onValidateName (control : AbstractControl): ValidationErrors|null{
+  //   const inputvalue = control.value
+  //   if (inputvalue &&inputvalue.length >6 && !inputvalue.includes('product')) {
+  //     return {hasProductsError: true}
+  //   }
+  //   return null
+  // }
   redireicToList(){
     this.router.navigateByUrl('/admin/products')
   }

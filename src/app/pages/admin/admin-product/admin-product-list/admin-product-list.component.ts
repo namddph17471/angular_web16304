@@ -24,6 +24,7 @@ export class AdminProductListComponent implements OnInit {
   }
   onGetList(){
     this.productService.getProducts().subscribe((data) =>{
+      console.log(data)
       this.products = data
     })
   }

@@ -1,5 +1,6 @@
 export type Product = {
     _id : string,
+    cateProductId : any,
     name:string,
     price: number,
     status:number,

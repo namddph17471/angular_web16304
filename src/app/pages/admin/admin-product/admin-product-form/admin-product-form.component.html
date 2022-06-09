@@ -15,7 +15,7 @@
         </div>
         <div class="mb-3" >
             <label for="">Giá Sale</label>
-            <input type="number" class="form-control" formControlName="price">
+            <input type="number" class="form-control" formControlName="sale_price">
             <app-show-validate [field]="productForm.get('sale_price')" key="Giá Sale"  ></app-show-validate>
         </div>
         <div class="mb-3" >
@@ -26,6 +26,14 @@
         <div class="mb-3" >
             <label for="">Mô tả</label>
             <input type="text" class="form-control" formControlName="desc">
+            <app-show-validate [field]="productForm.get('desc')" key="Mô tả"  ></app-show-validate>
+        </div>
+        <div class="mb-3" >
+            <label for="">Danh mục</label>
+            <select id="cateProductId" defaultValue="" class="mt-1 p-3 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 py-1 block w-full sm:text-sm border border-gray-300 rounded" formControlName="cateProductId">
+                <option value="">--Chọn Loại Hàng--</option>
+                <option *ngFor="let cateProduct of cateProducts" value="{{cateProduct._id}}"   class="p-3 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 py-1 block w-full sm:text-sm border border-gray-300 rounded" >{{cateProduct.name}}</option >
+            </select>
             <app-show-validate [field]="productForm.get('desc')" key="Mô tả"  ></app-show-validate>
         </div>
         <div class="mb-3" >

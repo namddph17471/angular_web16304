@@ -12,10 +12,10 @@ export class ProductService {
   constructor(private http:HttpClient) { }
   // kiểm dl Observable sẽ giúp lắng nghr API trả về kq
   getProducts():Observable<Product[]>{
-    return this.http.get<Product[]>(environment.products)
+    return this.http.get<Product[]>(`${environment.products}?_expand=cateProductId`)
   }
   getProduct(id:string):Observable<Product>{
-    return this.http.get<Product>(`${environment.products}/${id}`)
+    return this.http.get<Product>(`${environment.products}/${id}?_expand=cateProductId`)
   }
   deleteProduct(id : string):Observable<any>{
     return this.http.delete(`${environment.products}/${id}`)

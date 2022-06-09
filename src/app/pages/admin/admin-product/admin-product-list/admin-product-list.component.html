@@ -19,15 +19,27 @@
             <th>HD</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="text-center">
         <tr *ngFor="let product of products,index as i" >
             <td> {{i + 1}} </td>
-            <td>{{product.image}}</td>
-            <td>{{product.name}}</td>
+            <td>
+                <div class="block-image">
+                        
+                    <div class="bk-left">
+                        <span class="namehotrofm"></span>
+                    </div>
+                    <div class="thumb mt-10 ">
+                        <a routerLink="/products" >
+                            <img src="{{product.image}}"  class="no-repeat center center;background-size:cover w-full h-full object-center object-cover " />
+                        </a>
+                    </div>
+                </div>
+            </td>
+            <td class="font-medium text-lg center" >{{product.name}}</td>
             <td>{{product.price}}</td>
             <td>{{product.sale_price}}</td>
             <td>{{product.desc}}</td>
-            <td>{{product.price}}</td>
+            <td>{{product.cateProductId?.name}}</td>
             <td>
                 <button *ngIf="product.status === 1"  class="btn btn-success" (click)="onUpdateStatus(product._id,0)" >Đã Trả Nợ</button>
                 <button *ngIf="product.status === 0"  class="btn btn-secondary" (click)="onUpdateStatus(product._id,1)" >Chưa Trả Nợ</button>
