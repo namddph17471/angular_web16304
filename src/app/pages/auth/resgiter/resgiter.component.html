@@ -1,1 +1,34 @@
-<p>resgiter works!</p>
+<div class='w-[400px] mx-auto shadow-xl rounded-lg bg-white p-8 mt-5'>
+    <h1 class="text-center font-medium text-3xl">Đăng Ký Tài Khoản</h1>
+    <form class="mt-8 space-y-6" [formGroup]="resgiterForm" (ngSubmit)="onSubmit()" action="#" id="form-signin" method="POST">
+        <div class="rounded">
+            <div class="my-4 py-2">
+            <label class=" font-medium text-[#d3b87d] hover:text-[#d3b87d]">Name</label>
+                <input  type="text" formControlName="name"   class="appearance-none  relative block w-full px-4 py-2 border border-[#f7f7f7]   bg-[#f7f7f7]  placeholder-gray-500 text-gray-900 rounded-full focus:outline-none focus:ring-[#f4e6c3] focus:border-[#f4e6c3] focus:border-4 focus:z-10 sm:text-sm" placeholder="Name" />          
+            </div>
+            <div class="my-4 py-2">
+                <label class=" font-medium text-[#d3b87d] hover:text-[#d3b87d]">Email address</label>
+                    <input  type="email" formControlName="email"   class="appearance-none  relative block w-full px-4 py-2 border border-[#f7f7f7]   bg-[#f7f7f7]  placeholder-gray-500 text-gray-900 rounded-full focus:outline-none focus:ring-[#f4e6c3] focus:border-[#f4e6c3] focus:border-4 focus:z-10 sm:text-sm" placeholder="Email address" />          
+                </div>
+            <div class="my-4 py-2">
+            <label  class=" font-medium text-[#d3b87d] hover:text-[#d3b87d] ">Password</label>
+                <input  type="password"  formControlName="password"autoComplete="current-password"  class="appearance-none bg-[#f7f7f7]  relative block w-full px-4 py-2 border border-[#f7f7f7]   placeholder-gray-500 text-gray-900 rounded-full focus:outline-none focus: ring-[#f4e6c3] focus:border-4 focus:border-[#f4e6c3] focus:z-10 sm:text-sm" placeholder="Password"  />
+                
+            </div>
+        </div>
+        <div>
+            <div class="text-sm">
+            <p>
+                Bạn đã có tài khoản?
+                <a routerLink="/auth/dang-nhap" class="font-medium text-indigo-600 hover:text-indigo-500">
+                Đăng nhập
+                </a>
+            </p>
+            </div>
+            <button type="submit" class="group relative mt-3 w-full flex justify-center py-2 px-4 border border-transparent text-lg font-bold rounded-full text-white bg-[#b78a28]  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#b78a28]">
+            Đăng ký
+            </button>
+        </div>
+    </form>
+  
+  </div>

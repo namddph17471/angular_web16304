@@ -1,34 +1,5 @@
 <div class="container">
-    <div class=" mx-auto py-10 px-14 sm:py-5 sm:px-4   lg:px-[45px]">
-        <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Sản Phẩm Mới</h2>
-        <div class="mt-6 grid grid-cols-1  gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-            <div *ngFor="let product of products"  class="group  shadow-xl rounded-md bg-[#f7f7f7]">
-                <div class="w-full min-h-80   lg:h-80 lg:aspect-none">
-                    <div class="block-image">
-                        <div class="bk-left">
-                            <span class="namehotrofm"></span>
-                        </div>
-                        <div class="thumb mt-10 ">
-                            <a routerLink="/products/{{product._id}}" >
-                                <img src="{{product.image}}"  class="no-repeat center center;background-size:cover w-full h-full object-center object-cover " />
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-4 text-center  w-full opacity-0  relative  hover:opacity-100  hover:origin-top hover:-translate-y-[100px] transition ease-in-out duration-[500ms]">
-                        <div class="absolute bg-gray-50 bg-opacity-[0.80]  w-full h-[155px] shadow-xl">
-                            <h3 class="text-lg mt-3   font-bold text-gray-700">
-                                <a routerLink="/products/{{product._id}}" >{{product.name}}</a>
-                            </h3>
-                            <a routerLink="/products/{{product._id}}">
-                                <button class="bg-indigo-500 w-full mt-5 p-3 text-lg font-bold text-white border border-3 border-[#efefef] rouded" >Xem chi tiết</button>
-                            </a>
-                            <!-- <p class="text-lg font-medium text-gray-900">Price</p> -->
-                        </div>
-                    </div> 
-                </div>
-                
-            </div>
-        </div>
-    </div>
+    <app-cate-product-list></app-cate-product-list>
+    <app-list-product></app-list-product>
 </div>
 <router-outlet></router-outlet>

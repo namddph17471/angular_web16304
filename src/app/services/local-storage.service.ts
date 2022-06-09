@@ -13,11 +13,19 @@ export class LocalStorageService {
     return this.seviceSubject.asObservable();
   }
   // Tất cả các xử lý của ls sẽ thực hiện ở đây, để kích hoạt việc lắng nghe
+  isAuthentiCate(){
+    const user = JSON.parse(localStorage.getItem("loggedInUser") as string);
 
+    if (!user) return false;
+
+    return user;
+  }
   getItem() {
     return JSON.parse(localStorage.getItem('cart') || '[]');
   }
-
+  logout(){
+    localStorage.removeItem("loggedInUser")
+  }
   setItem(addItem:ProductCartType) {
     // Nghiệp vụ thêm sp vào giỏ
     // 1. Lấy ra toàn bộ sp trong giỏ

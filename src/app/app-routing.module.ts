@@ -17,6 +17,8 @@ import { AdminCateProductFormComponent } from './pages/admin/admin-cateProduct/a
 import { ListProductComponent } from './pages/product/list-product/list-product.component';
 import { DetailProductComponent } from './pages/product/detail-product/detail-product.component';
 import { ShowCartComponent } from './pages/show-cart/show-cart.component';
+import { CateProductListComponent } from './pages/cateProduct/cate-product-list/cate-product-list.component';
+import { CateProductDetailComponent } from './pages/cateProduct/cate-product-detail/cate-product-detail.component';
 
 const routes: Routes = [
   {
@@ -45,6 +47,19 @@ const routes: Routes = [
         {
           path:':id',
           component:DetailProductComponent
+        }
+      ]
+    },
+    {
+      path:'cateProduct',
+      children:[
+        {
+          path:'',
+          component:CateProductListComponent
+        },
+        {
+          path:':id',
+          component:CateProductDetailComponent
         }
       ]
     },
@@ -112,11 +127,11 @@ const routes: Routes = [
     path:'auth',
     children:[
       {
-        path:'login',
+        path:'dang-nhap',
         component:LoginComponent
       },
       {
-        path:'resgiter',
+        path:'dang-ky',
         component:ResgiterComponent
       }
     ]

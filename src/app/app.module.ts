@@ -36,6 +36,8 @@ import { AdminCateProductFormComponent } from './pages/admin/admin-cateProduct/a
 import { DetailProductComponent } from './pages/product/detail-product/detail-product.component';
 import { ShowCartComponent } from './pages/show-cart/show-cart.component';
 import { ListProductComponent } from './pages/product/list-product/list-product.component';
+import { CateProductListComponent } from './pages/cateProduct/cate-product-list/cate-product-list.component';
+import { CateProductDetailComponent } from './pages/cateProduct/cate-product-detail/cate-product-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,9 @@ import { ListProductComponent } from './pages/product/list-product/list-product.
     AdminCateProductFormComponent,
     DetailProductComponent,
     ShowCartComponent,
-    ListProductComponent
+    ListProductComponent,
+    CateProductListComponent,
+    CateProductDetailComponent,
   ],
   imports: [
     BrowserModule,
