@@ -30,7 +30,6 @@ export class CartComponent implements OnInit {
         this.cartItemValues += item.value;
         
       })
-      console.log(this.cartItemValues);
   }
 
 }

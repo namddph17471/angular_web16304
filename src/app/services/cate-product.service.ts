@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { CateProductType, CateProductCreateType } from '../types/CateProduct';
 
@@ -16,7 +16,7 @@ export class CateProductService {
     return this.http.get<CateProductType[]>(environment.cateProduct)
   }
   getCateProduct(id:string):Observable<any>{
-    return this.http.get<any>(`${environment.cateProduct}/${id}`)
+    return  this.http.get<any>(`${environment.cateProduct}/${id}`)
   }
   deleteCateProduct(id:string):Observable<any>{
     return this.http.delete(`${environment.cateProduct}/${id}`)

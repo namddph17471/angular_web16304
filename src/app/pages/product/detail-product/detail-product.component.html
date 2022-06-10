@@ -7,7 +7,7 @@
               <span class="namehotrofm"></span>
           </div>
           <div class="thumb mt-10 ">
-              <a routerLink="/products" >
+              <a routerLink="" >
                   <img src="{{product.image}}"  class="no-repeat center center;background-size:cover w-full h-full object-center object-cover " />
               </a>
           </div>
@@ -15,7 +15,7 @@
     </div>
     <div class="mt-4 lg:mt-0 lg:row-span-3">
       <h2 class="sr-only">Product information</h2>
-      <p class="text-3xl text-gray-900">{{product.price}} VND</p>
+      <p class="text-3xl text-gray-900">{{product.price|number}} VND</p>
       <div class="mt-6">
         <h3 class="sr-only">Reviews</h3>
         <div class="flex items-center">

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { ProductCartType } from '../types/Product';
+import { ProductCartType, ProductType } from '../types/Product';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,7 @@ import { ProductCartType } from '../types/Product';
 export class LocalStorageService {
 
   constructor() { }
-  private seviceSubject = new Subject<string>()
+  private seviceSubject = new Subject<any>()
   watchService(): Observable<any> {
     return this.seviceSubject.asObservable();
   }
@@ -18,6 +18,7 @@ export class LocalStorageService {
 
     if (!user) return false;
 
+    this.seviceSubject.next(user)
     return user;
   }
   getItem() {
@@ -25,6 +26,7 @@ export class LocalStorageService {
   }
   logout(){
     localStorage.removeItem("loggedInUser")
+    this.seviceSubject.next('')
   }
   setItem(addItem:ProductCartType) {
     // Nghiệp vụ thêm sp vào giỏ
@@ -44,5 +46,39 @@ export class LocalStorageService {
     // 3. Sau khi thêm sản phẩm vào giỏ bằng phương thức setItem này
     this.seviceSubject.next('');
     // thì watchStorage sẽ được phát sự kiện vào subscibe
+  }
+  increase(id:string){
+    let cartItems = this.getItem()
+    const cartItem = cartItems.find((product:any) => product.id === id)
+    cartItem.value++
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    this.seviceSubject.next('')
+  }
+  decrease(id:string){
+    let cartItems = this.getItem()
+    const currentItem = cartItems.find((product:any) => product.id === id)
+    currentItem.value--
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    if (currentItem.value  <1) {
+     const confirm =  window.confirm("Bạn có muốn xóa sản phẩm này khỏi giỏ hàng không ?")
+      if (confirm) {
+        cartItems = cartItems.filter((item:any) => item.id !== currentItem.id)
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+      }else{
+        currentItem.value =1
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+      }
+    }
+    this.seviceSubject.next('')
+  }
+  remove(id:string){
+    let cartItems = this.getItem()
+    const confirm =  window.confirm("Bạn có muốn xóa sản phẩm này khỏi giỏ hàng không ?")
+    if (confirm) {
+      cartItems = cartItems.filter((item:any) => item.id !== id)
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    this.seviceSubject.next('')
+    }
+    
   }
 }

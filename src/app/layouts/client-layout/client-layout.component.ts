@@ -28,10 +28,14 @@ export class ClientLayoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(this.lgService.isAuthentiCate())
+    this.onGetUser()
+    this.lgService.watchService().subscribe(data =>{
+      this.onGetUser()
+    })
+  }
+  onGetUser(){
     this.userData = this.lgService.isAuthentiCate()
   }
-  
   onLogout(){
     this.lgService.logout()
     this.toastr.success("Đăng xuất thành công")

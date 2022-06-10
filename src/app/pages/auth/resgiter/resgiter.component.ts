@@ -36,7 +36,7 @@ export class ResgiterComponent implements OnInit {
   }
   onSubmit(){
     const submitData = this.resgiterForm.value
-    this.authService.login(submitData).subscribe(data =>{
+    this.authService.resgiter(submitData).subscribe(data =>{
       this.toastr.success('Đăng ký thành công')
       this.router.navigateByUrl('/auth/dang-nhap')
     },error =>{

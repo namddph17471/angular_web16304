@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ReplaySubject, Subject } from 'rxjs';
 import { CateProductService } from 'src/app/services/cate-product.service';
 import { CateProductType } from 'src/app/types/CateProduct';
 import { ProductType } from 'src/app/types/Product';
@@ -26,12 +27,14 @@ export class CateProductDetailComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.onGetList()
+    
+  }
+  onGetList(){
     const id = this.activatedRoute.snapshot.params['id']
     this.cateProductService.getCateProduct(id).subscribe(data =>{
-      console.log(data)
       this.products = data.product
       this.cateProduct = data.cateProduct
     })
   }
-
 }

@@ -51,6 +51,19 @@ const routes: Routes = [
       ]
     },
     {
+      path:'auth',
+      children:[
+        {
+          path:'dang-nhap',
+          component:LoginComponent
+        },
+        {
+          path:'dang-ky',
+          component:ResgiterComponent
+        }
+      ]
+    },
+    {
       path:'cateProduct',
       children:[
         {
@@ -63,12 +76,14 @@ const routes: Routes = [
         }
       ]
     },
+    
     {
       path:'cart',
       component:ShowCartComponent
     }
     ]
   },
+  
   {
     path:'admin',
     component:AdminLayoutComponent,
@@ -120,19 +135,6 @@ const routes: Routes = [
             component:AdminCateProductFormComponent
           }
         ]
-      }
-    ]
-  },
-  {
-    path:'auth',
-    children:[
-      {
-        path:'dang-nhap',
-        component:LoginComponent
-      },
-      {
-        path:'dang-ky',
-        component:ResgiterComponent
       }
     ]
   }
