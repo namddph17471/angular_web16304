@@ -28,7 +28,6 @@ export class CateProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.onGetList()
-    
   }
   onGetList(){
     const id = this.activatedRoute.snapshot.params['id']

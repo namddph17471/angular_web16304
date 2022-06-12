@@ -1,0 +1,27 @@
+<div class="container shadow w-100 p-5 rounded ">
+    <!--ĐỊnh ngĩa biến quản lý form-->
+    <form action="" [formGroup]="userForm" (ngSubmit)="onSubmit()" >
+        <div class="mb-3" >
+            <label for="">Tên</label>
+            <!--Định nghĩa thuộc tính để lắng nghe input-->
+            <input type="text" class="form-control" formControlName="name">
+            <app-show-validate [field]="userForm.get('name')" key="Tên"  ></app-show-validate>
+        </div>
+        <div class="mb-3" >
+            <label for="">Email</label>
+            <!--Định nghĩa thuộc tính để lắng nghe input-->
+            <input type="text" class="form-control" formControlName="email">
+            <app-show-validate [field]="userForm.get('email')" key="Email"  ></app-show-validate>
+        </div>
+        <div class="mb-3" >
+            <label for="">Password</label>
+            <!--Định nghĩa thuộc tính để lắng nghe input-->
+            <input type="password" class="form-control" formControlName="password">
+            <app-show-validate [field]="userForm.get('password')" key="Password"  ></app-show-validate>
+        </div>
+        <div class="mb-3" >
+           <button [disabled]="!userForm.valid" class="btn btn-success">Submit</button>
+           <a routerLink="/admin/users" class="btn btn-primary ml-1" >Quay lại</a>
+        </div>
+    </form>
+</div>

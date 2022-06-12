@@ -6,6 +6,7 @@ const apiUrl = 'http://localhost:3000'
 export const environment = {
   production: false,
   products : `${apiUrl}/products`,
+  users : `${apiUrl}/users`,
   login : `${apiUrl}/dang-nhap`,
   resgiter: `${apiUrl}/dang-ky`,
   cateProduct:`${apiUrl}/cateProduct`

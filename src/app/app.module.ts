@@ -38,6 +38,8 @@ import { ShowCartComponent } from './pages/show-cart/show-cart.component';
 import { ListProductComponent } from './pages/product/list-product/list-product.component';
 import { CateProductListComponent } from './pages/cateProduct/cate-product-list/cate-product-list.component';
 import { CateProductDetailComponent } from './pages/cateProduct/cate-product-detail/cate-product-detail.component';
+import { AdminUserListComponent } from './pages/admin/admin-user/admin-user-list/admin-user-list.component';
+import { AdminUserFormComponent } from './pages/admin/admin-user/admin-user-form/admin-user-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,6 +70,8 @@ import { CateProductDetailComponent } from './pages/cateProduct/cate-product-det
     ListProductComponent,
     CateProductListComponent,
     CateProductDetailComponent,
+    AdminUserListComponent,
+    AdminUserFormComponent,
   ],
   imports: [
     BrowserModule,

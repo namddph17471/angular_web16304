@@ -17,6 +17,9 @@ export class ProductService {
   getProduct(id:string):Observable<ProductType>{
     return this.http.get<ProductType>(`${environment.products}/${id}?_expand=cateProductId`)
   }
+  readProduct(id:string):Observable<ProductType>{
+    return this.http.get<ProductType>(`${environment.products}/${id}`)
+  }
   deleteProduct(id : string):Observable<any>{
     return this.http.delete(`${environment.products}/${id}`)
   }

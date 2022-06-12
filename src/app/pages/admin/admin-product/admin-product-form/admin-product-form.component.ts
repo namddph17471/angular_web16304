@@ -53,7 +53,7 @@ export class AdminProductFormComponent implements OnInit {
     this.onGetListCate()
      this.productId = this.activateRoute.snapshot.params['id']
     if (this.productId) {
-      this.productService.getProduct(this.productId).subscribe(data =>{
+      this.productService.readProduct(this.productId).subscribe(data =>{
         console.log(data,"edit")
         this.productForm.patchValue({ // cập nhật data cho form
           name:data.name,

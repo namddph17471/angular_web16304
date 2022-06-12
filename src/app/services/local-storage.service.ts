@@ -17,7 +17,6 @@ export class LocalStorageService {
     const user = JSON.parse(localStorage.getItem("loggedInUser") as string);
 
     if (!user) return false;
-
     this.seviceSubject.next(user)
     return user;
   }

@@ -19,8 +19,23 @@ import { DetailProductComponent } from './pages/product/detail-product/detail-pr
 import { ShowCartComponent } from './pages/show-cart/show-cart.component';
 import { CateProductListComponent } from './pages/cateProduct/cate-product-list/cate-product-list.component';
 import { CateProductDetailComponent } from './pages/cateProduct/cate-product-detail/cate-product-detail.component';
+import { AdminUserListComponent } from './pages/admin/admin-user/admin-user-list/admin-user-list.component';
+import { AdminUserFormComponent } from './pages/admin/admin-user/admin-user-form/admin-user-form.component';
 
 const routes: Routes = [
+  {
+    path:'auth',
+    children:[
+      {
+        path:'dang-nhap',
+        component:LoginComponent
+      },
+      {
+        path:'dang-ky',
+        component:ResgiterComponent
+      }
+    ]
+  },
   {
     path:'',
     component: ClientLayoutComponent,
@@ -50,19 +65,7 @@ const routes: Routes = [
         }
       ]
     },
-    {
-      path:'auth',
-      children:[
-        {
-          path:'dang-nhap',
-          component:LoginComponent
-        },
-        {
-          path:'dang-ky',
-          component:ResgiterComponent
-        }
-      ]
-    },
+    
     {
       path:'cateProduct',
       children:[
@@ -133,6 +136,23 @@ const routes: Routes = [
           {
             path:'edit/:id',
             component:AdminCateProductFormComponent
+          }
+        ]
+      },
+      {
+        path:'users',
+        children:[
+          {
+            path:'',
+            component:AdminUserListComponent
+          },
+          {
+            path:'create',
+            component:AdminUserFormComponent
+          },
+          {
+            path:'edit/:id',
+            component:AdminUserFormComponent
           }
         ]
       }

@@ -24,3 +24,16 @@ export type TypeResgiterResponse={
         role:number
     }
 }
+export type UserType = {
+    _id:string,
+    email:string,
+    name:string,
+    role:number,
+    status:number
+}
+export type UserUpdateType = {
+    email?:string,
+    name?:string,
+    role?:number,
+    status?:number
+}
