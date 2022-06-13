@@ -40,6 +40,7 @@ import { CateProductListComponent } from './pages/cateProduct/cate-product-list/
 import { CateProductDetailComponent } from './pages/cateProduct/cate-product-detail/cate-product-detail.component';
 import { AdminUserListComponent } from './pages/admin/admin-user/admin-user-list/admin-user-list.component';
 import { AdminUserFormComponent } from './pages/admin/admin-user/admin-user-form/admin-user-form.component';
+import { UpdateStatusComponent } from './components/update-status/update-status.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,6 +73,7 @@ import { AdminUserFormComponent } from './pages/admin/admin-user/admin-user-form
     CateProductDetailComponent,
     AdminUserListComponent,
     AdminUserFormComponent,
+    UpdateStatusComponent,
   ],
   imports: [
     BrowserModule,

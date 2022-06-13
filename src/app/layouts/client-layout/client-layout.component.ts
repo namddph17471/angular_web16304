@@ -29,9 +29,9 @@ export class ClientLayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.onGetUser()
-    // this.lgService.watchService().subscribe(data =>{
-    //   this.onGetUser()
-    // })
+    this.lgService.watchService().subscribe(data =>{
+      this.onGetUser()
+    })
   }
   onGetUser(){
     this.userData = this.lgService.isAuthentiCate()

@@ -15,7 +15,9 @@
     </div>
     <div class="mt-4 lg:mt-0 lg:row-span-3">
       <h2 class="sr-only">Product information</h2>
-      <p class="text-3xl text-gray-900">{{product.price|number}} VND</p>
+      <p *ngIf="product.sale_price !==0"  class=" text-sm text-gray-900 line-through">{{product.price|number}} VND</p>
+      <p *ngIf="product.sale_price ===0"  class=" text-sm text-gray-900 ">{{product.price|number}} VND</p>
+      <p *ngIf="product.sale_price !==0"  class=" text-3xl text-gray-900 ">{{product.sale_price|number}} VND</p>
       <div class="mt-6">
         <h3 class="sr-only">Reviews</h3>
         <div class="flex items-center">

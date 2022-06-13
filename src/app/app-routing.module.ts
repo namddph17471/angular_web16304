@@ -23,19 +23,7 @@ import { AdminUserListComponent } from './pages/admin/admin-user/admin-user-list
 import { AdminUserFormComponent } from './pages/admin/admin-user/admin-user-form/admin-user-form.component';
 
 const routes: Routes = [
-  {
-    path:'auth',
-    children:[
-      {
-        path:'dang-nhap',
-        component:LoginComponent
-      },
-      {
-        path:'dang-ky',
-        component:ResgiterComponent
-      }
-    ]
-  },
+  
   {
     path:'',
     component: ClientLayoutComponent,
@@ -47,6 +35,19 @@ const routes: Routes = [
     {
       path:'about',
       component:AboutComponent
+    },
+    {
+      path:'auth',
+      children:[
+        {
+          path:'dang-nhap',
+          component:LoginComponent
+        },
+        {
+          path:'dang-ky',
+          component:ResgiterComponent
+        }
+      ]
     },
     {
       path:'users',
