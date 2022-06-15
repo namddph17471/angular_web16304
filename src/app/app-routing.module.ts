@@ -21,6 +21,7 @@ import { CateProductListComponent } from './pages/cateProduct/cate-product-list/
 import { CateProductDetailComponent } from './pages/cateProduct/cate-product-detail/cate-product-detail.component';
 import { AdminUserListComponent } from './pages/admin/admin-user/admin-user-list/admin-user-list.component';
 import { AdminUserFormComponent } from './pages/admin/admin-user/admin-user-form/admin-user-form.component';
+import { CanAcessLoginGuard } from './guards/can-acess-login.guard';
 
 const routes: Routes = [
   
@@ -38,6 +39,7 @@ const routes: Routes = [
     },
     {
       path:'auth',
+      canActivate:[CanAcessLoginGuard],
       children:[
         {
           path:'dang-nhap',
@@ -181,6 +183,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers:[CanAccessAdminGuard] // đưa vào để route bên trên có thể dùng
+  providers:[CanAccessAdminGuard,CanAcessLoginGuard] // đưa vào để route bên trên có thể dùng
 })
 export class AppRoutingModule { }

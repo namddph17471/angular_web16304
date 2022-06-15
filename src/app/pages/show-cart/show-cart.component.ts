@@ -31,7 +31,6 @@ export class ShowCartComponent implements OnInit {
     this.cartItems.forEach(item => {
         this.cartItemValues += item.value;
         if (item.sale_price ===0) {
-          
           this.total += item.price * item.value
         }else{
           this.total += item.sale_price * item.value
