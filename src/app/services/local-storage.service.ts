@@ -58,7 +58,7 @@ export class LocalStorageService {
     const currentItem = cartItems.find((product:any) => product.id === id)
     currentItem.value--
     localStorage.setItem('cart', JSON.stringify(cartItems));
-    if (currentItem.value  <1) {
+    if (currentItem.value  < 1) {
      const confirm =  window.confirm("Bạn có muốn xóa sản phẩm này khỏi giỏ hàng không ?")
       if (confirm) {
         cartItems = cartItems.filter((item:any) => item.id !== currentItem.id)
