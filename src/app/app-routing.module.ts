@@ -37,20 +37,7 @@ const routes: Routes = [
       path:'about',
       component:AboutComponent
     },
-    {
-      path:'auth',
-      canActivate:[CanAcessLoginGuard],
-      children:[
-        {
-          path:'dang-nhap',
-          component:LoginComponent
-        },
-        {
-          path:'dang-ky',
-          component:ResgiterComponent
-        }
-      ]
-    },
+    
     {
       path:'users',
       component:UserComponent
@@ -89,7 +76,20 @@ const routes: Routes = [
     }
     ]
   },
-  
+  {
+    path:'auth',
+    canActivate:[CanAcessLoginGuard],
+    children:[
+      {
+        path:'dang-nhap',
+        component:LoginComponent
+      },
+      {
+        path:'dang-ky',
+        component:ResgiterComponent
+      }
+    ]
+  },
   {
     path:'admin',
     component:AdminLayoutComponent,

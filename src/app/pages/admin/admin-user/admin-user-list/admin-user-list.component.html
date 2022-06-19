@@ -23,9 +23,9 @@
             <td>{{user.email}}</td>
             <td *ngIf="user.role === 1" >Admin</td>
             <td *ngIf="user.role !== 1" >User</td>
-            <td>
-                <button *ngIf="user.status === 1"  class="btn btn-success" (click)="onUpdateStatus(user._id,0)" >Đã Trả Nợ</button>
-                <button *ngIf="user.status === 0"  class="btn btn-secondary" (click)="onUpdateStatus(user._id,1)" >Chưa Trả Nợ</button>
+            <td *ngIf="user.role !== 1" >
+                <button *ngIf="user.status === 0"  class="btn btn-success" (click)="onUpdateStatus(user._id,1)" >Kích Hoạt</button>
+                <button *ngIf="user.status === 1"  class="btn btn-secondary" (click)="onUpdateStatus(user._id,0)" >Chưa Kích Hoạt</button>
             </td>
             <td>
                 <!-- <a routerLink="/admin/users/edit/{{user._id}}">

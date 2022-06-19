@@ -34,8 +34,8 @@
             <td>{{cateProduct.name}}</td>
             
             <td>
-                <button *ngIf="cateProduct.status === 1"  class="btn btn-success" (click)="onUpdateStatus(cateProduct._id,0)" >Đã Trả Nợ</button>
-                <button *ngIf="cateProduct.status === 0"  class="btn btn-secondary" (click)="onUpdateStatus(cateProduct._id,1)" >Chưa Trả Nợ</button>
+                <button *ngIf="cateProduct.status === 1"  class="btn btn-success" (click)="onUpdateStatus(cateProduct._id,0)" >Hiện</button>
+                <button *ngIf="cateProduct.status === 0"  class="btn btn-secondary" (click)="onUpdateStatus(cateProduct._id,1)" >Ẩn</button>
             </td>
             <td>
                 <a routerLink="/admin/cateProduct/edit/{{cateProduct._id}}">

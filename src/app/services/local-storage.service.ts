@@ -17,7 +17,6 @@ export class LocalStorageService {
     const user = JSON.parse(localStorage.getItem("loggedInUser") as string);
 
     if (!user) return false;
-    this.seviceSubject.next('')
     return user;
   }
   getItem() {
@@ -25,7 +24,6 @@ export class LocalStorageService {
   }
   logout(){
     localStorage.removeItem("loggedInUser")
-    this.seviceSubject.next('')
   }
   setItem(addItem:ProductCartType) {
     // Nghiệp vụ thêm sp vào giỏ
