@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       this.toastr.success('Đăng nhập thành công')
       const {user} = this.lgService.isAuthentiCate()
       if (user.role === 1) {
-        this.router.navigateByUrl('/admin/products')
+        this.router.navigateByUrl('/admin')
       }else{
         this.router.navigateByUrl('/')
       }
