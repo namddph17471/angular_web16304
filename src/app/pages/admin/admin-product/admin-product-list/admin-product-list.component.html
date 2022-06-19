@@ -42,12 +42,12 @@
             <td>{{product.cateProductId?.name}}</td>
             <td>
                 <button *ngIf="product.status === 1"  class="btn btn-success" (click)="onUpdateStatus(product._id,0)" >Hiện</button>
-                <button *ngIf="product.status === 0"  class="btn btn-secondary" (click)="onUpdateStatus(product._id,1)" >Ẩn</button>
+                <button *ngIf="product.status === 0"  class="btn btn-bg-dark text-white" (click)="onUpdateStatus(product._id,1)" >Ẩn</button>
             </td>
             <td>
-                <a routerLink="/admin/products/{{product._id}}">
+                <!-- <a routerLink="/admin/products/{{product._id}}">
                     <button class="btn btn-info" >Detail</button>
-                </a>
+                </a> -->
                 <a routerLink="/admin/products/edit/{{product._id}}">
                     <button class="btn btn-primary m-2" >Edit</button>
                 </a>
