@@ -12,7 +12,6 @@ export class LocalStorageService {
   watchService(): Observable<any> {
     return this.seviceSubject.asObservable();
   }
-  // Tất cả các xử lý của ls sẽ thực hiện ở đây, để kích hoạt việc lắng nghe
   isAuthentiCate(){
     const user = JSON.parse(localStorage.getItem("loggedInUser") as string);
 
@@ -26,10 +25,7 @@ export class LocalStorageService {
     localStorage.removeItem("loggedInUser")
   }
   setItem(addItem:ProductCartType) {
-    // Nghiệp vụ thêm sp vào giỏ
-    // 1. Lấy ra toàn bộ sp trong giỏ
     const cartItems = this.getItem();
-    // 2. kiểm tra trong giỏ đã có phần tử có id giống cartItem chưa
     const existItem = cartItems.find((item: ProductCartType) =>
       item.id === addItem.id
     );
@@ -40,9 +36,7 @@ export class LocalStorageService {
     }
 
     localStorage.setItem('cart', JSON.stringify(cartItems));
-    // 3. Sau khi thêm sản phẩm vào giỏ bằng phương thức setItem này
     this.seviceSubject.next('');
-    // thì watchStorage sẽ được phát sự kiện vào subscibe
   }
   increase(id:string){
     let cartItems = this.getItem()
